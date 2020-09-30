@@ -473,7 +473,7 @@ void configId(uint16_t freq, uint8_t id)
     ptr->setThisAddress(id);
     ptr->setHeaderFrom(id);
     ptr->setHeaderTo(id);
-    control.raiseEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MES_ALERT_EVT_ALARM1);
+    control.raiseEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MES_ALERT_EVT_ALARM1, EventCreationMode.CREATE_AND_FIRE);
 }
 
 //%
