@@ -20,6 +20,7 @@ namespace rl0x {
     //%shim=rl0x::configId
     //%u.defl=0
     export function config(u: RADIO, v: number = 0): void {
+        control.raiseEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MES_ALERT_EVT_ALARM1)
         return;
     }
 
