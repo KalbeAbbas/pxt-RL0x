@@ -476,7 +476,7 @@ void configId(uint16_t freq, uint8_t id)
     #ifdef CODAL_I2C
     Event evt(3, 6);
     #else
-    MicroBitEvent evt(3,6); 
+    MicroBitEvent evt(2000,6); 
     #endif
 }
 

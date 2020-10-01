@@ -47,10 +47,6 @@ namespace rl0x {
         return;
     }
 
-    export function beginRL0x()
-    {
-        control.raiseEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MES_ALERT_EVT_ALARM1)
-    }
 
     //%block="RL0x send value %str = %val"
     //%str.defl="name"
@@ -131,7 +127,7 @@ namespace rl0x {
     //% block="RL0x on received "
     //% draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void): void {
-        control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MES_ALERT_EVT_ALARM1, function () {
+        control.onEvent(2000, 6, function () {
             init();
             onReceivedStringHandler = cb
         })
