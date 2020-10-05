@@ -77,8 +77,6 @@ namespace rl0x {
     }
 
     function init() {
-        if (initialized) return;
-        initialized = true;
 
         startParallel(function () {
 
