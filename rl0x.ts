@@ -127,7 +127,7 @@ namespace rl0x {
     //% block="RL0x on received "
     //% draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void): void {
-        control.onEvent(2000, 6, function () {
+        control.onEvent(3, 6, function () {
             init();
             onReceivedStringHandler = cb
         })
