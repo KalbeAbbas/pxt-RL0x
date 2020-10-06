@@ -83,9 +83,9 @@ namespace rl0x {
             while(true)
             {
 
-                        //let rcvStr = recv()
+                        let rcvStr = recv()
                         console.log("Test\n")
-                        /*switch (rcvStr[0]) {
+                        switch (rcvStr[0]) {
                             case "a":
                                 onReceivedNumberHandler(parseFloat(rcvStr.substr(1, rcvStr.length)));
                                 break;
@@ -99,7 +99,7 @@ namespace rl0x {
                             default:
                                 return;
                         }
-                        rcvStr = ""*/
+                        rcvStr = ""
 
                 basic.pause(100)
 
