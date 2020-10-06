@@ -371,7 +371,6 @@ bool xRL0X::waitPacketSent(uint16_t timeout)
 bool xRL0X::waitAvailableTimeout(uint16_t timeout)
 {
     unsigned long starttime = system_timer_current_time();
-    runInParallel({
         while ((system_timer_current_time() - starttime) < timeout)
         {
             if (available())
@@ -381,7 +380,6 @@ bool xRL0X::waitAvailableTimeout(uint16_t timeout)
             schedule();
             // yield();
         }
-    })
     return false;
 }
 
@@ -452,13 +450,13 @@ String recv()
 {
     uint8_t buf[195] = {NULL};
     uint8_t len = sizeof(buf);
-    if (ptr->waitAvailableTimeout(10000))
-    {
+    /*if (ptr->waitAvailableTimeout(10000))
+    {*/
         if (ptr->recv(buf, &len))
         {
             return mkString((const char *)buf, strlen((const char *)buf));
         }
-    }
+    //}
     return mkString("");
 }
 
