@@ -377,7 +377,7 @@ bool xRL0X::waitAvailableTimeout(uint16_t timeout)
             {
                 return true;
             }
-            schedule();
+            //schedule();
             // yield();
         }
     return false;
