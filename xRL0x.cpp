@@ -377,7 +377,7 @@ bool xRL0X::waitAvailableTimeout(uint16_t timeout)
             {
                 return true;
             }
-            //schedule();
+            schedule();
             // yield();
         }
     return false;
@@ -450,7 +450,7 @@ String recv()
 {
     uint8_t buf[195] = {NULL};
     uint8_t len = sizeof(buf);
-    if (ptr->waitAvailableTimeout(2000))
+    if (ptr->waitAvailableTimeout(10000))
     {
         if (ptr->recv(buf, &len))
         {
