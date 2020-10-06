@@ -139,6 +139,7 @@ bool xRL0X::send(const uint8_t *data, uint8_t len)
 
 bool xRL0X::recv(uint8_t *buf, uint8_t *len)
 {
+    uBit.serial.send("Hello")
     if (!available())
     {
         return false;
