@@ -372,7 +372,6 @@ bool xRL0X::waitAvailableTimeout(uint16_t timeout)
 {
     if (available())
     {
-        uBit.serial.send(MSTR("available"));
         return true;
     }
     //schedule();
