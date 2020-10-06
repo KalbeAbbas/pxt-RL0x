@@ -450,13 +450,13 @@ String recv()
 {
     uint8_t buf[195] = {NULL};
     uint8_t len = sizeof(buf);
-    /*if (ptr->waitAvailableTimeout(10000))
-    {*/
+    if (ptr->waitAvailableTimeout(2000))
+    {
         if (ptr->recv(buf, &len))
         {
             return mkString((const char *)buf, strlen((const char *)buf));
         }
-    //}
+    }
     return mkString("");
 }
 
