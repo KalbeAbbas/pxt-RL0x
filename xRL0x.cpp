@@ -139,7 +139,6 @@ bool xRL0X::send(const uint8_t *data, uint8_t len)
 
 bool xRL0X::recv(uint8_t *buf, uint8_t *len)
 {
-    uBit.serial.send("Hello")
     if (!available())
     {
         return false;
@@ -451,6 +450,7 @@ String recv()
 {
     uint8_t buf[195] = {NULL};
     uint8_t len = sizeof(buf);
+    uBit.serial.send("Hello");
     if (ptr->waitAvailableTimeout(10000))
     {
         if (ptr->recv(buf, &len))
