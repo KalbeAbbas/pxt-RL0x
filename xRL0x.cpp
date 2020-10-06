@@ -371,15 +371,17 @@ bool xRL0X::waitPacketSent(uint16_t timeout)
 bool xRL0X::waitAvailableTimeout(uint16_t timeout)
 {
     unsigned long starttime = system_timer_current_time();
-    while ((system_timer_current_time() - starttime) < timeout)
-    {
-        if (available())
+    runInParallel({
+        while ((system_timer_current_time() - starttime) < timeout)
         {
-            return true;
+            if (available())
+            {
+                return true;
+            }
+            schedule();
+            // yield();
         }
-        schedule();
-        // yield();
-    }
+    })
     return false;
 }
 
