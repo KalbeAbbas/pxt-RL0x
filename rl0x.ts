@@ -78,10 +78,10 @@ namespace rl0x {
 
     function init() {
 
-        if(initialized)
+        /*if(initialized)
         return
 
-        initialized = true
+        initialized = true*/
 
         startParallel(function () {
 
