@@ -83,7 +83,7 @@ namespace rl0x {
             while(true)
             {
 
-                        //let rcvStr = recv()
+                        let rcvStr = recv()
                         console.log("Test\n")
                         /*switch (rcvStr[0]) {
                             case "a":
