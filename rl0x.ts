@@ -93,9 +93,11 @@ namespace rl0x {
 
                         if(rcvStr[0] == "a")
                         {
+                            basic.showString("Number")
                            onReceivedNumberHandler(parseFloat(rcvStr.substr(1, rcvStr.length)));
                         }else if(rcvStr[0] == "b")
                         {
+                            basic.showString("String")
                             onReceivedStringHandler(rcvStr.substr(1, rcvStr.length));
                         }else if(rcvStr[0] == "c")
                         {
