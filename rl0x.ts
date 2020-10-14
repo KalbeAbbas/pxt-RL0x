@@ -85,7 +85,12 @@ namespace rl0x {
 
                         let rcvStr = recv()
                         console.log("Test\n")
-                        switch (rcvStr[0]) {
+
+                        if(rcvStr[0] == "b")
+                        {
+                          onReceivedStringHandler(rcvStr.substr(1, rcvStr.length));
+                        }
+                        /*switch (rcvStr[0]) {
                             case "a":
                                 onReceivedNumberHandler(parseFloat(rcvStr.substr(1, rcvStr.length)));
                                 break;
@@ -98,7 +103,7 @@ namespace rl0x {
                                 break;
                             default:
                                 return;
-                        }
+                        }*/
                         rcvStr = ""
 
                 basic.pause(100)
