@@ -86,24 +86,17 @@ namespace rl0x {
                         let rcvStr = recv()
                         console.log("Test\n")
 
-                        if(rcvStr[0] == "b")
+                        if(rcvStr[0] == "a")
                         {
-                          onReceivedStringHandler(rcvStr.substr(1, rcvStr.length));
+                           onReceivedNumberHandler(parseFloat(rcvStr.substr(1, rcvStr.length)));
+                        }else if(rcvStr[0] == "b")
+                        {
+                            onReceivedStringHandler(rcvStr.substr(1, rcvStr.length));
+                        }else if(rcvStr[0] == "c")
+                        {
+                            let index = rcvStr.indexOf("$!$$!$");
+                            onReceivedValueHandler(rcvStr.substr(1, index - 1), parseFloat(rcvStr.substr(index + 6, rcvStr.length)))
                         }
-                        /*switch (rcvStr[0]) {
-                            case "a":
-                                onReceivedNumberHandler(parseFloat(rcvStr.substr(1, rcvStr.length)));
-                                break;
-                            case "b":
-                                onReceivedStringHandler(rcvStr.substr(1, rcvStr.length));
-                                break;
-                            case "c":
-                                let index = rcvStr.indexOf("$!$$!$");
-                                onReceivedValueHandler(rcvStr.substr(1, index - 1), parseFloat(rcvStr.substr(index + 6, rcvStr.length)))
-                                break;
-                            default:
-                                return;
-                        }*/
                         rcvStr = ""
 
                 basic.pause(100)
