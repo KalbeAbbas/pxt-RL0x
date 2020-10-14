@@ -78,10 +78,10 @@ namespace rl0x {
 
     function init() {
 
-        /*if(initialized)
+        if(initialized)
         return
 
-        initialized = true*/
+        initialized = true
 
         startParallel(function () {
 
@@ -123,8 +123,8 @@ namespace rl0x {
     export function onReceivedNumber(cb: (receivedNumber: number) => void): void {
         control.onEvent(3, 6, function () {
             init();
-            onReceivedNumberHandler = cb
         })
+        onReceivedNumberHandler = cb
     }
 
     //% block="RL0x on received "
@@ -132,8 +132,8 @@ namespace rl0x {
     export function onReceivedString(cb: (receivedString: string) => void): void {
         control.onEvent(3, 6, function () {
             init();
-            onReceivedStringHandler = cb
         })
+        onReceivedStringHandler = cb
     }
 
     //% block="RL0x on received "
@@ -141,8 +141,8 @@ namespace rl0x {
     export function onReceivedValue(cb: (name: string, value: number) => void): void {
         control.onEvent(3, 6, function () {
             init();
-            onReceivedValueHandler = cb
         })
+        onReceivedValueHandler = cb
     }
 
     //% shim=parall::startParallel
